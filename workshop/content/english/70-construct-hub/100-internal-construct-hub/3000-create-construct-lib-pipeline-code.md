@@ -7,11 +7,11 @@ weight = 300
 
 Next, we'll set up the infrastructure that will deploy the construct library into our Internal Construct Hub. Since this is separate from the "Internal Construct Hub" infrastructure in the previous step, we'll want this code to be in its own directory. In your terminal, make sure you are in the `construct-hub-workshop` directory.
 
-Navigate to <a href="https://console.aws.amazon.com/codecommit" target="_blank">CodeCommit</a> and create a new remote repository named `construct-lib-repo`. Go to the HTTPS (GRC) tab and follow the instructions to clone the repository `construct-lib-repo` to your local machine (replace `<path>` in the code below with the URL to the newly created repository).
+Navigate to <a href="https://console.aws.amazon.com/codecommit" target="_blank">CodeCommit</a> and create a new remote repository named `construct-library`. Go to the HTTPS (GRC) tab and follow the instructions to clone the repository `construct-library` to your local machine (replace `<path>` in the code below with the URL to the newly created repository).
 
 {{<highlight bash>}}
 git clone <path>
-cd construct-lib-repo
+cd construct-library
 {{</highlight>}}
 
 Note: We will be working with Typescript, so make sure you have it installed. If not, run the following command in your terminal:
@@ -20,7 +20,7 @@ Note: We will be working with Typescript, so make sure you have it installed. If
 npm install -g typescript
 {{</highlight>}}
 
-Next, we'll create a new folder called `pipeline` within the `/construct-lib-repo` directory. This will contain all the pipeline infrastructure. Then we'll initialize a CDK Typescript application project.
+Next, we'll create a new folder called `pipeline` within the `/construct-library` directory. This will contain all the pipeline infrastructure. Then we'll initialize a CDK Typescript application project.
 
 {{<highlight bash>}}
 mkdir pipeline
@@ -147,7 +147,7 @@ const app = new cdk.App();
 new PipelineStack(app, 'InternalConstructPipelineStack', {
   codeArtifactDomain: "cdkworkshop-domain",
   codeArtifactRepository: "cdkworkshop-repository",
-  constructLibGitRepositoryName: "construct-lib-repo"
+  constructLibGitRepositoryName: "construct-library"
 });
 {{</highlight>}}
 

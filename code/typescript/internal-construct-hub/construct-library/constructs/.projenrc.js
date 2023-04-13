@@ -9,7 +9,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   defaultReleaseBranch: 'main',
   github: false,
   name: 'cdkworkshop-lib',
-  repositoryUrl: 'codecommit::us-east-1://construct-lib-repo',
+  repositoryUrl: 'codecommit::us-east-1://construct-library',
   description: 'CDK Construct Library by projen/jsii',
   python: {
     distName: 'hitcounter',
