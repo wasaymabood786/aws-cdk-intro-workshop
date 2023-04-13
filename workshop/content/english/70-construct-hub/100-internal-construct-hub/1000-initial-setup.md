@@ -17,14 +17,14 @@ You must also have <a href="https://docs.docker.com/get-docker/" target="_blank"
 We'll create a parent directory to hold all of the code for this workshop:
 
 {{<highlight bash>}}
-mkdir construct-hub-workshop && cd construct-hub-workshop
+mkdir internal-construct-hub && cd internal-construct-hub
 {{</highlight>}}
 
 ### Project Directory
 Next we'll create a project directory for the actual Construct Hub construct we'll be deploying to our aws account:
 
 {{<highlight bash>}}
-mkdir internal-construct-hub && cd internal-construct-hub
+mkdir construct-hub && cd construct-hub
 {{</highlight>}}
 
 ## Create a New TypeScript CDK Project

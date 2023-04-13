@@ -9,7 +9,7 @@ Next, we will create a construct library project leveraging Projen to synthesize
 
 ### Set Up a Projen Project
 
-From the `construct-lib-repo` directory, Create a directory named `constructs/`. It should be a sibling (on the same level) of the `pipeline/` directory.
+From the `construct-library` directory, Create a directory named `constructs/`. It should be a sibling (on the same level) of the `pipeline/` directory.
 
 {{<highlight bash>}}
 mkdir constructs
@@ -72,7 +72,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   github: false,
   name: 'cdkworkshop-lib',
   releaseTagPrefix: 'cdkworkshop-lib',
-  repositoryUrl: 'codecommit::us-east-1://construct-lib-repo',
+  repositoryUrl: 'codecommit::us-east-1://construct-library',
   description: 'CDK Construct Library by projen/jsii',
   python: {
     distName: 'hitcounter',
@@ -253,7 +253,7 @@ npx projen
 
 ## Push Initial Commit to CodeCommit Repository
 
-Ensure you push from the `construct-lib-repo` directory:
+Ensure you push from the `construct-library` directory:
 {{<highlight bash>}}
 git add .
 git commit -m 'Initial Commit'

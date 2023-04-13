@@ -3,7 +3,7 @@
   "description": "CDK Construct Library by projen/jsii",
   "repository": {
     "type": "git",
-    "url": "codecommit::us-east-1://construct-lib-repo"
+    "url": "codecommit::us-east-1://construct-library"
   },
   "scripts": {
     "build": "npx projen build",

@@ -6,5 +6,5 @@ const app = new cdk.App();
 new PipelineStack(app, 'InternalConstructPipelineStack', {
   codeArtifactDomain: "cdkworkshop-domain",
   codeArtifactRepository: "cdkworkshop-repository",
-  constructLibGitRepositoryName: "construct-lib-repo"
+  constructLibGitRepositoryName: "construct-library"
 });
