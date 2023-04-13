@@ -20,7 +20,7 @@ export class InternalConstructHubStack extends cdk.Stack {
 
     repo.addDependency(domain);
 
-    // Create internal instance of ConstructHub, register the new CodeArtifact repo
+    // Create internal instance of ConstructHub, register the new CodeArtifact repos
     new ConstructHub(this, 'ConstructHub', {
       packageSources: [
         new sources.CodeArtifact({ repository: repo })
