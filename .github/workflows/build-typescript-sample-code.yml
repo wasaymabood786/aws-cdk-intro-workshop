@@ -85,7 +85,10 @@ jobs:
   tests-internal-construct-hub-construct-library-constructs:
     name: CDK synth and test construct workshop constructlib construct
     runs-on: ubuntu-latest
-    working-directory: code/typescript/internal-construct-hub/construct-library/constructs
+    defaults:
+      run:
+        shell: bash
+        working-directory: code/typescript/internal-construct-hub/construct-library/constructs
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -127,7 +130,10 @@ jobs:
   tests-internal-construct-hub-construct-library-pipeline:
     name: CDK synth and test construct workshop constructlib pipeline
     runs-on: ubuntu-latest
-    working-directory: code/typescript/internal-construct-hub/construct-library/pipeline
+    defaults:
+      run:
+        shell: bash
+        working-directory: code/typescript/internal-construct-hub/construct-library/pipeline
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -150,7 +156,10 @@ jobs:
   tests-internal-construct-hub-construct-hub:
     name: CDK synth and test construct workshop constructhub
     runs-on: ubuntu-latest
-    working-directory: code/typescript/internal-construct-hub/construct-hub
+    defaults:
+      run:
+        shell: bash
+        working-directory: code/typescript/internal-construct-hub/construct-hub
 
     steps:
       - name: Checkout code
