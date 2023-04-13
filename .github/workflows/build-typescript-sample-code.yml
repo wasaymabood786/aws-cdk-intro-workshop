@@ -83,12 +83,8 @@ jobs:
         run: npx jest
 
   tests-internal-construct-hub-construct-library-constructs:
-    name: CDK synth and test construct workshop constructlib construct
+    name: CDK synth and test internal construct hub - construct-library constructs
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: code/typescript/internal-construct-hub/construct-library/constructs
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -115,24 +111,24 @@ jobs:
           python-version: '3.10'
 
       - name: Install NPM modules
+        working-directory: code/typescript/internal-construct-hub/construct-library/constructs
         run: yarn install --frozen-lockfile
 
       - name: Print Node and Projen version
+        working-directory: code/typescript/internal-construct-hub/construct-library/constructs
         run: node --version && npx projen --version &&  grep 'projen"' package.json && npx jsii --version
 
       - name: Build
+        working-directory: code/typescript/internal-construct-hub/construct-library/constructs
         run: npm run build
 
       - name: Run tests
+        working-directory: code/typescript/internal-construct-hub/construct-library/constructs
         run: npx jest
 
   tests-internal-construct-hub-construct-library-pipeline:
-    name: CDK synth and test construct workshop constructlib pipeline
+    name: CDK synth and test internal construct hub - construct-library pipeline
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: code/typescript/internal-construct-hub/construct-library/pipeline
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -143,23 +139,21 @@ jobs:
           node-version: 18.x
 
       - name: Install NPM modules
+        working-directory: code/typescript/internal-construct-hub/construct-library/pipeline
         run: npm install
 
       - name: CDK synth
+        working-directory: code/typescript/internal-construct-hub/construct-library/pipeline
         run: npx cdk synth
 
       - name: Run tests
+        working-directory: code/typescript/internal-construct-hub/construct-library/pipeline
         run: npx jest
 
 
   tests-internal-construct-hub-construct-hub:
-    name: CDK synth and test construct workshop constructhub
+    name: CDK synth and test internal construct hub - construct-hub
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: code/typescript/internal-construct-hub/construct-hub
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -170,10 +164,13 @@ jobs:
           node-version: 18.x
 
       - name: Install NPM modules
+        working-directory: code/typescript/internal-construct-hub/construct-hub
         run: npm install
 
       - name: CDK synth
+        working-directory: code/typescript/internal-construct-hub/construct-hub
         run: npx cdk synth
 
       - name: Run tests
+        working-directory: code/typescript/internal-construct-hub/construct-hub
         run: npx jest
