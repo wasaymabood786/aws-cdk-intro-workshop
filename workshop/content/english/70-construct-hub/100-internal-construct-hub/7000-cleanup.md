@@ -9,7 +9,7 @@ Time to clean up the resources created in this workshop:
 
 ### Delete the CodeCommit Repo
 
-Navigate to  <a href="https://console.aws.amazon.com/codecommit" target="_blank">CodeCommit</a> and delete the `construct-lib-repo` repository.
+Navigate to  <a href="https://console.aws.amazon.com/codecommit" target="_blank">CodeCommit</a> and delete the `construct-library` repository.
 
 ### Delete the DynamoDB Table
 
