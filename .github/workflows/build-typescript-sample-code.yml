@@ -91,10 +91,10 @@ jobs:
         working-directory: code/typescript/internal-construct-hub/construct-library/constructs
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node 18
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18
 
@@ -118,7 +118,6 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Print Node and Projen version
-        working-directory: code/typescript/internal-constructs-workshop/construct-lib-repo/constructs
         run: node --version && npx projen --version &&  grep 'projen"' package.json && npx jsii --version
 
       - name: Build
@@ -136,10 +135,10 @@ jobs:
         working-directory: code/typescript/internal-construct-hub/construct-library/pipeline
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node 18.x
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18.x
 
@@ -163,10 +162,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node 18.x
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18.x
 
